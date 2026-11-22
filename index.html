@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Web Programming | My Portfolio</title>
 
     <style>
@@ -22,6 +22,7 @@
             flex-direction: column;
         }
 
+        /* HEADER */
         header {
             padding: 25px 8%;
             display: flex;
@@ -42,6 +43,7 @@
             font-size: 14px;
         }
 
+        /* MAIN CONTENT */
         main {
             flex: 1;
             display: flex;
@@ -86,13 +88,14 @@
             margin-bottom: 45px;
         }
 
+        /* SUBMISSION CARDS */
         .submissions {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
             width: 100%;
-            max-width: 750px;
+            max-width: 1000px;
         }
 
         .card {
@@ -129,6 +132,7 @@
         .card p {
             color: #aaaac0;
             font-size: 14px;
+            line-height: 1.6;
         }
 
         .arrow {
@@ -139,6 +143,7 @@
             margin-top: 20px;
         }
 
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 22px;
@@ -146,20 +151,51 @@
             border-top: 1px solid #ffffff15;
             font-size: 13px;
         }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 600px) {
+            header {
+                padding: 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            main {
+                padding: 45px 20px;
+            }
+
+            .submissions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            footer {
+                padding: 18px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="logo">MY PORTFOLIO.</div>
         <span>WEB PROGRAMMING</span>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main>
+
         <div class="tag">LEARN • CREATE • DEVELOP</div>
 
         <h1>Web <span>Programming</span></h1>
+
         <h2>My Learning Journey & Submissions</h2>
 
         <p class="description">
@@ -168,25 +204,47 @@
             throughout the course.
         </p>
 
+        <!-- SUBMISSIONS -->
         <div class="submissions">
 
+            <!-- WEEK 01 -->
             <a href="week1" class="card">
                 <div class="number">01 / FIRST ACTIVITY</div>
                 <h3>Week 01</h3>
-                <p>Explore my first web programming activity and HTML exercises.</p>
+                <p>
+                    Explore my first web programming activity
+                    and HTML exercises.
+                </p>
                 <span class="arrow">↗</span>
             </a>
 
+            <!-- WEEK 02 -->
             <a href="week2" class="card">
                 <div class="number">02 / SECOND ACTIVITY</div>
                 <h3>Week 02</h3>
-                <p>Discover my next activities and web development progress.</p>
+                <p>
+                    Discover my next activities and web
+                    development progress.
+                </p>
+                <span class="arrow">↗</span>
+            </a>
+
+            <!-- WEEK 03 -->
+            <a href="week3" class="card">
+                <div class="number">03 / THIRD ACTIVITY</div>
+                <h3>Week 03</h3>
+                <p>
+                    Explore my latest web programming activities
+                    and responsive web design exercises.
+                </p>
                 <span class="arrow">↗</span>
             </a>
 
         </div>
+
     </main>
 
+    <!-- FOOTER -->
     <footer>
         © 2026 Web Programming | Student Portfolio
     </footer>
