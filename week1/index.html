@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +8,128 @@
 </head>
 <body>
   <header>
-    <h1>Campus Notices</h1>
+    <h1>Santo Tomas National High School</h1>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#notices">Notices</a></li>
+        <li><a href="#deadlines">Deadlines</a></li>
+        <li><a href="#submit">Post a notice</a></li>
+      </ul>
+    </nav>
   </header>
+
   <main>
-    <article class="notice">
-      <h2>Library hours extended</h2>
-      <p>The library stays open until 9 PM during midterm week.</p>
-    </article>
+    <section id="notices">
+      <h2>Latest Campus Notices</h2>
+
+      <article class="notice">
+        <h2>Library hours extended</h2>
+        <p class="meta">
+          <time datetime="2026-10-12">12 October 2026</time>
+          · <span class="tag">Academic</span>
+        </p>
+        <p>The library stays open until 9 PM during midterm week.</p>
+      </article>
+
+      <article class="notice">
+        <h2>Campus Clean-Up Drive</h2>
+        <p class="meta">
+          <time datetime="2026-11-28">28 November 2026</time>
+          · <span class="tag">Event</span>
+        </p>
+        <p>All students are invited to participate in the campus clean-up drive. Let us work together to keep our school clean.</p>
+      </article>
+
+      <article class="notice">
+        <h2>Student Organization Registration</h2>
+        <p class="meta">
+          <time datetime="2026-12-05">5 December 2026</time>
+          · <span class="tag">General</span>
+        </p>
+        <p>Students who want to join an organization may register at the student affairs office.</p>
+      </article>
+    </section>
+
+    <section id="categories">
+      <h2>Notice Categories</h2>
+      <ul>
+        <li>Academic</li>
+        <li>Events</li>
+        <li>General Announcements</li>
+      </ul>
+    </section>
+
+    <section id="deadlines">
+      <h2>Upcoming Deadlines</h2>
+
+      <table>
+        <caption>Upcoming Campus Deadlines</caption>
+        <thead>
+          <tr>
+            <th scope="col">Activity</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Enrolment ends</td>
+            <td>20 January</td>
+          </tr>
+          <tr>
+            <td>Programming contest registration</td>
+            <td>25 January</td>
+          </tr>
+          <tr>
+            <td>Project submission</td>
+            <td>30 January</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="submit">
+      <h2>Post a Notice</h2>
+
+      <form action="#" method="post">
+        <p>
+          <label for="title">Title</label><br>
+          <input type="text" id="title" name="title"
+                 required maxlength="100">
+        </p>
+
+        <p>
+          <label for="category">Category</label><br>
+          <select id="category" name="category">
+            <option value="academic">Academic</option>
+            <option value="event">Event</option>
+            <option value="general">General</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="date">Date</label><br>
+          <input type="date" id="date" name="date">
+        </p>
+
+        <p>
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message"
+                    rows="4" required></textarea>
+        </p>
+
+        <p>
+          <label for="email">Your email</label><br>
+          <input type="email" id="email" name="email" required>
+        </p>
+
+        <button type="submit">Post Notice</button>
+      </form>
+    </section>
   </main>
+
   <footer>
-    <p>College of Computer Science, DMMMSU-SLUC</p>
+    <p>Senior High school(STNHS)</p>
   </footer>
 </body>
 </html>

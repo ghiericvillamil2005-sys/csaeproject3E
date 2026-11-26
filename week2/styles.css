@@ -1,32 +1,48 @@
-/*GENERAL STYLE */
+
+/* =====================================
+   STEP 1: COLOR VARIABLES
+===================================== */
+
+:root {
+    --brand: #24364b;
+    --brand-dark: #163b69;
+    --brand-soft: #dce3ec;
+    --surface: #ffffff;
+    --page: #f4f7fa;
+    --text: #1f2933;
+    --border: #d9e2ec;
+    --radius: 8px;
+}
+
+/* =====================================
+   STEP 2: BASE STYLES
+===================================== */
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
+
 body {
-    background-color: #f4f4f4;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
 }
 
-/* HEADER */
-.header {
-    background-color: #24364b;
-    color: white;
-    padding: 15px 40px;
+/* =====================================
+   STEP 3: HEADER
+===================================== */
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+header {
+    background: var(--brand);
+    color: var(--surface);
+    padding: 16px 24px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    display: block;
 }
 
 .campus-logo {
@@ -34,255 +50,279 @@ body {
     height: 55px;
     object-fit: contain;
     border-radius: 50%;
-    background-color: white;
+    background: var(--surface);
     padding: 3px;
+    vertical-align: middle;
 }
 
 .header h2 {
-    font-size: 24px;
-    text-align: left;
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 1.5rem;
+    vertical-align: middle;
 }
 
-/* NAVIGATION BAR */
-.navbar {
-    background-color: #dce3ec;
-    padding: 15px;
-    text-align: center;
+/* =====================================
+   STEP 4: NAVIGATION
+===================================== */
+
+nav {
+    background: var(--brand-soft);
+    padding: 16px 24px;
 }
 
-.navbar a {
-    color: #24364b;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 5px;
+}
+
+nav a {
+    color: var(--brand);
     text-decoration: none;
     font-weight: bold;
-    margin: 0 20px;
-    transition: color 0.3s;
 }
 
-.navbar a:hover {
-    color: #007bff;
+nav a:hover {
+    text-decoration: underline;
 }
 
-/* MAIN CONTAINER */
+/* =====================================
+   STEP 5: MAIN CONTENT
+===================================== */
+
+main {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
 .container {
-    display: grid;
-
-    /* TWO COLUMNS IN ONE ROW */
-    grid-template-columns: 1fr 1fr;
-
-    align-items: stretch;
-    gap: 0;
-
-    min-height: 350px;
-
-    background-color: white;
-    margin: 30px auto;
-    width: 90%;
-    max-width: 1100px;
-
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
 }
 
-/* CAMPUS NOTICE */
+/* =====================================
+   STEP 6: CAMPUS NOTICE
+===================================== */
+
 .campus-notice {
-    padding: 30px;
-    border-right: 2px solid #ddd;
+    margin-bottom: 24px;
 }
 
 .campus-notice h2,
 .content h2 {
-    margin-bottom: 25px;
-    color: #24364b;
+    color: var(--brand);
+    margin-bottom: 16px;
 }
 
-/* IMAGE CONTAINER */
+.description {
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+/* =====================================
+   STEP 7: NOTICE CARDS
+===================================== */
+
 .image-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.image-box {
-    width: 100%;
-}
-
-.image-box img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     display: block;
 }
-/* IMAGE ANIMATION */
-.image-box {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 5px;
-    animation: floatImage 3s ease-in-out infinite;
+
+.notice {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+    margin: 0 1% 16px 0;
 }
 
-/* IMAGE ZOOM EFFECT */
-.image-box img {
+.notice img {
     width: 100%;
-    height: 140px;
+    height: 120px;
     object-fit: cover;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
     display: block;
-
-    transition: transform 0.5s ease;
 }
 
-/* HOVER ANIMATION */
-.image-box:hover img {
-    transform: scale(1.15);
+.image-caption {
+    font-weight: bold;
+    margin: 8px 0;
 }
 
-/* FLOATING ANIMATION */
-@keyframes floatImage {
-    0%, 100% {
-        transform: translateY(0);
-    }
+/* =====================================
+   STEP 8: NOTICE TAG
+===================================== */
 
-    50% {
-        transform: translateY(-8px);
-    }
+.tag {
+    display: inline-block;
+    background: var(--brand-soft);
+    color: var(--brand);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.85rem;
 }
-/* CONTENT FORM */
+
+/* =====================================
+   STEP 9: CONTENT FORM
+===================================== */
+
 .content {
-    padding: 30px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
 }
 
 .content form {
-    display: flex;
-    flex-direction: column;
+    margin-top: 16px;
 }
 
 .content label {
-    margin-bottom: 8px;
+    display: block;
     font-weight: bold;
-    color: #333;
+    margin-bottom: 8px;
 }
 
-.content input,
-.content textarea {
+input,
+select,
+textarea {
+    display: block;
     width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    font-size: 14px;
-    outline: none;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font: inherit;
+    color: var(--text);
+    background: var(--surface);
 }
 
-.content input:focus,
-.content textarea:focus {
-    border-color: #24364b;
-    box-shadow: 0 0 4px rgba(36, 54, 75, 0.2);
-}
-
-.content textarea {
-    height: 120px;
+textarea {
+    min-height: 120px;
     resize: vertical;
 }
 
-/* BUTTON */
-.content button {
-    padding: 12px;
-    background-color: #24364b;
-    color: white;
-    border: none;
-    border-radius: 5px;
+/* Visible keyboard focus */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--brand);
+    border-color: var(--brand);
+}
+
+/* =====================================
+   STEP 10: BUTTON
+===================================== */
+
+button {
+    background: var(--brand);
+    color: var(--surface);
+    border: 0;
+    border-radius: var(--radius);
+    padding: 10px 20px;
+    font: inherit;
     cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.3s;
 }
 
-.content button:hover {
-    background-color: #405b78;
+button:hover {
+    background: var(--brand-dark);
 }
 
-/* FOOTER */
-.footer {
-    background-color: #24364b;
-    color: white;
+/* =====================================
+   STEP 11: TABLE STYLING
+===================================== */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: var(--surface);
+    margin-bottom: 16px;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background: var(--brand-soft);
+    color: var(--brand);
+}
+
+/* =====================================
+   STEP 12: FOOTER
+===================================== */
+
+footer {
+    background: var(--brand);
+    color: var(--surface);
     text-align: center;
-    padding: 25px;
-    margin-top: auto;
+    padding: 16px;
 }
 
 .footer h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .footer p {
     margin-top: 8px;
-    font-size: 13px;
+    font-size: 0.85rem;
 }
 
-/* TABLET RESPONSIVE DESIGN */
-@media (max-width: 900px) {
+/* =====================================
+   STEP 13: MOBILE ADJUSTMENT
+===================================== */
 
-    .container {
-        width: 95%;
-    }
-
-    .campus-notice,
-    .content {
-        padding: 20px;
-    }
-
-    .image-box img {
-        height: 110px;
-    }
-
-}
-
-/* MOBILE RESPONSIVE DESIGN */
 @media (max-width: 600px) {
 
-    .header {
-        padding: 15px 20px;
+    header {
+        padding: 16px;
+    }
+
+    .header h2 {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        padding: 12px;
+    }
+
+    nav li {
+        margin-right: 8px;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    main {
+        margin: 16px auto;
+        padding: 0 12px;
     }
 
     .container {
-        grid-template-columns: 1fr;
-        width: 92%;
-        margin: 20px auto;
+        padding: 12px;
     }
 
-    .campus-notice {
-        border-right: none;
-        border-bottom: 2px solid #ddd;
+    .notice {
+        width: 100%;
+        margin-right: 0;
     }
 
-    .image-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 7px;
+    .notice img {
+        height: 160px;
     }
-
-    .image-box img {
-        height: 90px;
-    }
-
-    .navbar {
-        padding: 12px 5px;
-    }
-
-    .navbar a {
-        margin: 0 8px;
-        font-size: 12px;
-    }
-
-    .campus-notice,
-    .content {
-        padding: 20px;
-    }
-
-    .footer h2 {
-        font-size: 17px;
-    }
-
 }

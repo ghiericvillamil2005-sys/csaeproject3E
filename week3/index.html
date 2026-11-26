@@ -1,105 +1,157 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Campus Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Santo Tomas National High School | STNHS</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER WITH LOGO, SCHOOL NAME AND NAVIGATION -->
     <header class="header">
+
         <div class="logo">
-            <img src="logo.jpg" alt="Campus Logo" class="campus-logo">
-            <h1>Campus Portal</h1>
+            <img
+                src="logo.jpg"
+                alt="Santo Tomas National High School Logo"
+                class="campus-logo"
+            >
+
+            <h1>Santo Tomas National High School</h1>
         </div>
 
-        <!-- NAVIGATION -->
-        <nav class="navbar">
+        <!-- NAVIGATION BAR -->
+        <nav class="navbar" aria-label="Main navigation">
             <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PROGRAM</a></li>
+                <li><a href="#">COMMUNITY</a></li>
+                <li><a href="#">ANNOUNCEMENT</a></li>
+                <li><a href="#">ENROLLMENT</a></li>
                 <li><a href="#">CONTACT US</a></li>
+                <li><a href="#">LOG IN</a></li>
             </ul>
         </nav>
+
     </header>
 
     <!-- MAIN CONTENT -->
     <main class="container">
 
-        <!-- CAMPUS NOTICES -->
+        <!-- CAMPUS NOTICE -->
         <section class="campus-notice">
-            <h2>Campus Notice</h2>
+
+            <h2>Welcome to Santo Tomas National High School</h2>
 
             <p class="section-description">
-                Stay updated with the latest campus announcements.
+                Welcome to STNHS! Discover school activities, programs,
+                announcements, and important updates for our students,
+                parents, teachers, and community.
             </p>
 
-            <div class="image-container">
+            <!-- NOTICE GRID -->
+            <div class="notices">
 
-                <article class="image-box">
-                    <img src="imgg.jpg" alt="Campus Notice 1">
+                <!-- NOTICE 1 -->
+                <article class="notice">
+                    <img src="img.jpg" alt="STNHS School Activities">
+
                     <div class="notice-info">
-                        <h3>Campus Announcement</h3>
-                        <p>Important updates and announcements for students.</p>
+                        <h3>School Activities</h3>
+                        <p>
+                            Explore the different activities and events
+                            organized by Santo Tomas National High School.
+                        </p>
                     </div>
                 </article>
 
-                <article class="image-box">9
-                    <img src="img.jpg" alt="Campus Notice 2">
+                <!-- NOTICE 2 -->
+                <article class="notice">
+                    <img src="imgg.jpg" alt="STNHS Student Development">
+
                     <div class="notice-info">
-                        <h3>Student Activities</h3>
-                        <p>Stay informed about upcoming student activities.</p>
+                        <h3>Student Development</h3>
+                        <p>
+                            We encourage students to develop their
+                            knowledge, skills, talents, and abilities.
+                        </p>
                     </div>
                 </article>
 
-                <article class="image-box">
-                    <img src="images.jpg" alt="Campus Notice 3">
+                <!-- NOTICE 3 -->
+                <article class="notice">
+                    <img src="images.jpg" alt="STNHS School Building">
+
                     <div class="notice-info">
-                        <h3>Academic Updates</h3>
-                        <p>Read the latest academic reminders and updates.</p>
+                        <h3>School Community</h3>
+                        <p>
+                            Building a strong partnership among students,
+                            teachers, parents, and the community.
+                        </p>
                     </div>
                 </article>
 
-                <article class="image-box text-notice">
+                <!-- NOTICE 4 -->
+                <article class="notice text-notice">
                     <div class="notice-info">
-                        <h3>Enrollment Reminder</h3>
-                        <p>Check the official enrollment schedule and requirements.</p>
+                        <h3>Academic Programs</h3>
+                        <p>
+                            Learn about the academic programs and learning
+                            opportunities offered by STNHS.
+                        </p>
                     </div>
                 </article>
 
-                <article class="image-box text-notice">
+                <!-- NOTICE 5 -->
+                <article class="notice text-notice">
                     <div class="notice-info">
-                        <h3>Library Announcement</h3>
-                        <p>Remember to follow library rules and regulations.</p>
+                        <h3>Enrollment Information</h3>
+                        <p>
+                            Stay informed about enrollment schedules,
+                            requirements, and registration announcements.
+                        </p>
                     </div>
                 </article>
 
-                <article class="image-box text-notice">
+                <!-- NOTICE 6 -->
+                <article class="notice text-notice">
                     <div class="notice-info">
-                        <h3>College Activities</h3>
-                        <p>Watch for upcoming College of Computer Studies events.</p>
+                        <h3>School Announcements</h3>
+                        <p>
+                            Check this section for important reminders
+                            and the latest school updates.
+                        </p>
                     </div>
                 </article>
 
             </div>
         </section>
 
-        <!-- CONTENT FORM -->
+        <!-- CONTACT FORM -->
         <section class="content">
-            <h2>Post a Notice</h2>
 
-            <form>
-                <label for="title">Title:</label>
+            <h2>Contact and Inquiries</h2>
+
+            <p class="form-description">
+                Have a question or concern? Send your message below.
+            </p>
+
+            <form action="#" method="post">
+
+                <label for="title">Subject:</label>
 
                 <input
                     type="text"
                     id="title"
                     name="title"
-                    placeholder="Enter title"
+                    placeholder="Enter subject"
                     required
                 >
 
@@ -108,23 +160,27 @@
                 <textarea
                     id="message"
                     name="message"
-                    placeholder="Write your message here..."
+                    placeholder="Write your inquiry here..."
                     required
                 ></textarea>
 
-                <button type="button">Post Notice</button>
+                <button type="submit">Submit Inquiry</button>
+
             </form>
+
         </section>
 
     </main>
 
     <!-- DEADLINES SIDEBAR -->
     <aside class="sidebar">
-        <h2>Important Deadlines</h2>
+
+        <h2>Important School Dates</h2>
 
         <div class="table-container">
+
             <table>
-                <caption>Academic Schedule</caption>
+                <caption>School Schedule</caption>
 
                 <thead>
                     <tr>
@@ -136,29 +192,38 @@
                 <tbody>
                     <tr>
                         <td>Enrollment</td>
-                        <td>Nov. 25</td>
+                        <td>To be announced</td>
                     </tr>
+
+                    <tr>
+                        <td>School Activities</td>
+                        <td>To be announced</td>
+                    </tr>
+
                     <tr>
                         <td>Project Submission</td>
-                        <td>Nov. 28</td>
+                        <td>To be announced</td>
                     </tr>
-                    <tr>
-                        <td>Registration</td>
-                        <td>Dec. 02</td>
-                    </tr>
+
                     <tr>
                         <td>Examinations</td>
-                        <td>Dec. 10</td>
+                        <td>To be announced</td>
                     </tr>
                 </tbody>
+
             </table>
+
         </div>
+
     </aside>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <h2>College of Computer Studies</h2>
-        <p>Campus Portal | All Rights Reserved</p>
+
+        <h2>Santo Tomas National High School</h2>
+
+        <p>STNHS | All Rights Reserved</p>
+
     </footer>
 
 </body>

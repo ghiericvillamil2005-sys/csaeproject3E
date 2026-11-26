@@ -1,0 +1,20 @@
+HTTP Inspection Trace
+
+Note: example.com is reserved for documentation examples. The Week 4 exercise uses it to inspect a sample HTTP response; do not treat it as a production service or use it for ongoing testing or monitoring. Record the values you observe in your browser's Network tab because response details can vary.
+
+1. https://example.com
+Request Method: GET (verify in the Network tab)
+Status Code: Record the observed value in the Network tab
+Content-Type: Record the observed response header in the Network tab
+
+2. https://jsonplaceholder.typicode.com/posts/9999
+Status Code: Record the observed value in the Network tab
+Meaning: A 404 response means the requested resource was not found.
+Response Content-Type: Record the observed response header in the Network tab
+
+3. https://example.com/nothing-here
+Status Code: Record the observed value in the Network tab; this is a documentation-domain exercise only.
+Meaning: A 404 response means the requested page or resource was not found.
+
+Why a browser makes several requests:
+A browser can make one request for the HTML document and additional requests for linked resources such as CSS, JavaScript, images, fonts, and API data needed to display and operate the page.
