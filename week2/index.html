@@ -3,8 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Official Campus Notices Board of Santo Tomas National High School">
     <title>Santo Tomas National High School</title>
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -14,8 +17,10 @@
     <header class="header">
         <div class="logo">
             <img src="logo.jpg" alt="STNHS Campus Logo" class="campus-logo">
-            <h2>Santo Tomas National High School</h2>
+            <h1>Santo Tomas National High School</h1>
         </div>
+
+        <p>Welcome to our school community!</p>
     </header>
 
     <!-- NAVIGATION BAR -->
@@ -35,32 +40,33 @@
     <!-- MAIN CONTENT -->
     <main class="container">
 
-        <!-- CAMPUS NOTICE -->
-        <section class="campus-notice">
-            <h2>Santo Tomas National High School</h2>
+        <!-- HOME SECTION -->
+        <section class="campus-notice" id="home">
+            <h2>Welcome to Santo Tomas National High School</h2>
 
             <p class="description">
                 Welcome to Santo Tomas National High School.
-                This page provides information about our school,
-                activities, programs, and announcements.
+                This website provides information about our school,
+                educational programs, student activities, community,
+                and important announcements.
             </p>
 
             <div class="image-container">
 
                 <article class="notice">
-                    <img src="img.jpg" alt="School Activities">
+                    <img src="img.jpg" alt="School activities and events">
                     <p class="image-caption">School Activities</p>
                     <span class="tag">Activities</span>
                 </article>
 
                 <article class="notice">
-                    <img src="imgg.jpg" alt="Student Development">
+                    <img src="imgg.jpg" alt="Students participating in school programs">
                     <p class="image-caption">Student Development</p>
                     <span class="tag">Students</span>
                 </article>
 
                 <article class="notice">
-                    <img src="images.jpg" alt="School Community">
+                    <img src="images.jpg" alt="School community activities">
                     <p class="image-caption">School Community</p>
                     <span class="tag">Community</span>
                 </article>
@@ -68,13 +74,135 @@
             </div>
         </section>
 
-        <!-- CONTENT FORM -->
-        <section class="content">
-            <h2>Contact and Inquiries</h2>
+        <!-- ABOUT SECTION -->
+        <section class="content" id="about">
+            <h2>About Our School</h2>
 
             <p class="description">
-                Send your questions, suggestions, or messages
-                to Santo Tomas National High School.
+                Santo Tomas National High School is committed to
+                providing quality education and helping students
+                develop their knowledge, skills, values, and talents.
+            </p>
+        </section>
+
+        <!-- PROGRAM SECTION -->
+        <section class="content" id="categories">
+            <h2>Our Programs</h2>
+
+            <ul class="program-list">
+                <li>Academic Learning Programs</li>
+                <li>Student Development Activities</li>
+                <li>School-Based Learning Activities</li>
+                <li>Community Involvement Programs</li>
+            </ul>
+        </section>
+
+        <!-- COMMUNITY SECTION -->
+        <section class="content" id="community">
+            <h2>School Community</h2>
+
+            <p class="description">
+                Our school encourages cooperation among students,
+                teachers, parents, and the local community to create
+                a positive learning environment.
+            </p>
+        </section>
+
+        <!-- ANNOUNCEMENTS SECTION -->
+        <section class="content" id="announcements">
+            <h2>Latest Announcements</h2>
+
+            <article class="notice announcement">
+                <h3>Library Hours Extended</h3>
+
+                <p class="meta">
+                    <time datetime="2026-10-12">12 October 2026</time>
+                    | <span class="tag">Academic</span>
+                </p>
+
+                <p>
+                    The school library stays open until 9 PM during
+                    midterm week to give students additional study time.
+                </p>
+            </article>
+
+            <article class="notice announcement">
+                <h3>Campus Clean-Up Drive</h3>
+
+                <p class="meta">
+                    <time datetime="2026-11-28">28 November 2026</time>
+                    | <span class="tag">Event</span>
+                </p>
+
+                <p>
+                    All students are invited to participate in the
+                    campus clean-up drive. Let us work together to
+                    keep our school clean.
+                </p>
+            </article>
+
+            <article class="notice announcement">
+                <h3>Student Organization Registration</h3>
+
+                <p class="meta">
+                    <time datetime="2026-12-05">5 December 2026</time>
+                    | <span class="tag">General</span>
+                </p>
+
+                <p>
+                    Students who want to join a school organization
+                    may register at the Student Affairs Office.
+                </p>
+            </article>
+        </section>
+
+        <!-- ENROLLMENT SECTION -->
+        <section class="content" id="deadlines">
+            <h2>Enrollment Information</h2>
+
+            <p class="description">
+                Students and parents may visit the school office
+                for enrollment requirements, schedules, and other
+                important information.
+            </p>
+
+            <h3>Upcoming Enrollment Schedule</h3>
+
+            <table>
+                <caption>School Enrollment Schedule</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Activity</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Enrollment Begins</td>
+                        <td>12 January 2027</td>
+                    </tr>
+
+                    <tr>
+                        <td>Enrollment Ends</td>
+                        <td>20 January 2027</td>
+                    </tr>
+
+                    <tr>
+                        <td>Opening of Classes</td>
+                        <td>June 2027</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="content" id="submit">
+            <h2>Post a Notice</h2>
+
+            <p class="description">
+                Submit a campus notice by completing the labelled fields below.
             </p>
 
             <form action="#" method="post">
@@ -84,7 +212,33 @@
                     type="text"
                     id="title"
                     name="title"
-                    placeholder="Enter title"
+                    placeholder="Enter notice title"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" selected disabled>Select a category</option>
+                    <option value="academic">Academic</option>
+                    <option value="event">Event</option>
+                    <option value="general">General</option>
+                </select>
+
+                <label for="date">Notice Date:</label>
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    required
+                >
+
+                <label for="email">Email Address:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
                     required
                 >
 
@@ -92,13 +246,36 @@
                 <textarea
                     id="message"
                     name="message"
+                    rows="5"
                     placeholder="Write your message here..."
                     required
                 ></textarea>
 
-                <button type="submit">Post Notice</button>
+                <button type="submit">Submit Message</button>
+                <button type="reset" class="reset-button">Clear Form</button>
 
             </form>
+        </section>
+
+        <!-- LEARNING RESOURCES -->
+        <section class="content" id="resources">
+            <h2>Learning Resources</h2>
+
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                       target="_blank" rel="noopener">
+                        MDN HTML Documentation
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://validator.w3.org/"
+                       target="_blank" rel="noopener">
+                        W3C HTML Validator
+                    </a>
+                </li>
+            </ul>
         </section>
 
     </main>
@@ -107,6 +284,7 @@
     <footer class="footer">
         <h2>Santo Tomas National High School</h2>
         <p>STNHS | All Rights Reserved</p>
+        <p>Campus Notices Board</p>
     </footer>
 
 </body>

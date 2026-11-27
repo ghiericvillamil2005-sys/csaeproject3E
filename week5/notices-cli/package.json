@@ -1,0 +1,13 @@
+{
+  "name": "week5-node-lab",
+  "version": "1.0.0",
+  "description": "Week 5 Node notice CLI and HTTP server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -2,262 +2,251 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Web Programming | My Portfolio</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web Programming learning journey and weekly submissions">
+    <title>Web Programming Portfolio</title>
     <style>
+        :root {
+            --navy: #111827;
+            --navy-light: #1f2937;
+            --card: #1d2635;
+            --card-hover: #263246;
+            --accent: #8ca7ff;
+            --text: #ffffff;
+            --muted: #aeb7c8;
+            --border: #344158;
+        }
+
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #10101f, #191936, #25254b);
-            color: white;
-            display: flex;
-            flex-direction: column;
+            margin: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            background: linear-gradient(145deg, #0d1421 0%, #182235 55%, #111827 100%);
+            color: var(--text);
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
         }
 
-        /* HEADER */
         header {
-            padding: 25px 8%;
+            min-height: 76px;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ffffff20;
+            padding: 18px clamp(20px, 6vw, 88px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #8b9cff;
-            letter-spacing: 2px;
-        }
-
-        header span {
-            color: #aaa;
+        .brand {
+            color: var(--accent);
             font-size: 14px;
-        }
-
-        /* MAIN CONTENT */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .tag {
-            color: #8b9cff;
-            border: 1px solid #8b9cff70;
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 12px;
+            font-weight: 800;
             letter-spacing: 2px;
-            margin-bottom: 25px;
+        }
+
+        .course {
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        main {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            display: grid;
+            align-content: center;
+            text-align: center;
+            padding: 64px 0;
+        }
+
+        .eyebrow {
+            width: fit-content;
+            margin: 0 auto 18px;
+            padding: 8px 16px;
+            color: var(--accent);
+            border: 1px solid rgba(140, 167, 255, 0.42);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
         h1 {
-            font-size: clamp(38px, 7vw, 65px);
-            font-weight: 800;
-            margin-bottom: 15px;
+            margin: 0;
+            font-size: clamp(42px, 8vw, 72px);
+            line-height: 1;
         }
 
         h1 span {
-            color: #8b9cff;
+            color: var(--accent);
         }
 
-        h2 {
-            font-size: 19px;
-            color: #b5b5d0;
-            font-weight: 400;
-            margin-bottom: 15px;
+        .subtitle {
+            margin: 18px 0 8px;
+            color: #d7dce8;
+            font-size: clamp(18px, 3vw, 24px);
         }
 
         .description {
-            color: #9999b5;
-            max-width: 450px;
+            max-width: 560px;
+            margin: 12px auto 36px;
+            color: var(--muted);
             line-height: 1.7;
-            margin-bottom: 45px;
         }
 
-        /* SUBMISSION CARDS */
-        .submissions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        .card {
-            width: 280px;
-            padding: 30px;
+        .week-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
             text-align: left;
-            background: #ffffff0b;
-            border: 1px solid #ffffff20;
-            border-radius: 18px;
+        }
+
+        .week-card {
+            min-height: 210px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 26px;
+            color: var(--text);
+            background: rgba(29, 38, 53, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             text-decoration: none;
-            color: white;
-            transition: 0.3s ease;
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: #8b9cff;
-            background: #8b9cff15;
-            box-shadow: 0 10px 35px #8b9cff20;
+        .week-card:hover,
+        .week-card:focus-visible {
+            transform: translateY(-6px);
+            background: var(--card-hover);
+            border-color: var(--accent);
+            outline: none;
         }
 
-        .number {
-            color: #8b9cff;
-            font-size: 13px;
+        .week-number {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 800;
             letter-spacing: 2px;
-            margin-bottom: 15px;
         }
 
-        .card h3 {
-            font-size: 25px;
-            margin-bottom: 10px;
+        .week-card h2 {
+            margin: 18px 0 8px;
+            font-size: 26px;
         }
 
-        .card p {
-            color: #aaaac0;
-            font-size: 14px;
+        .week-card p {
+            margin: 0;
+            color: var(--muted);
             line-height: 1.6;
         }
 
         .arrow {
-            display: block;
-            text-align: right;
-            color: #8b9cff;
-            font-size: 25px;
-            margin-top: 20px;
+            align-self: flex-end;
+            color: var(--accent);
+            font-size: 24px;
         }
 
-        /* FOOTER */
         footer {
+            padding: 20px;
+            color: #8f99aa;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
-            padding: 22px;
-            color: #77778f;
-            border-top: 1px solid #ffffff15;
             font-size: 13px;
         }
 
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 600px) {
+        @media (min-width: 600px) {
+            .week-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 960px) {
+            .week-list {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 599px) {
             header {
-                padding: 20px;
+                align-items: flex-start;
                 flex-direction: column;
-                gap: 10px;
+                gap: 6px;
             }
 
             main {
-                padding: 45px 20px;
-            }
-
-            .submissions {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card {
-                width: 100%;
-                max-width: 350px;
-            }
-
-            footer {
-                padding: 18px;
+                padding: 44px 0;
             }
         }
     </style>
 </head>
-
 <body>
-
-    <!-- HEADER -->
     <header>
-        <div class="logo">MY PORTFOLIO.</div>
-        <span>WEB PROGRAMMING</span>
+        <div class="brand">MY PORTFOLIO</div>
+        <div class="course">WEB PROGRAMMING</div>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main>
-
-        <div class="tag">LEARN • CREATE • DEVELOP</div>
-
+        <div class="eyebrow">LEARN • CREATE • DEVELOP</div>
         <h1>Web <span>Programming</span></h1>
-
-        <h2>My Learning Journey & Submissions</h2>
-
+        <p class="subtitle">My Learning Journey &amp; Submissions</p>
         <p class="description">
-            Welcome to my web programming portfolio.
-            Explore my activities, projects, and learning progress
-            throughout the course.
+            Explore my weekly activities and projects as I progress through
+            HTML, CSS, JavaScript, APIs, Node.js, and full-stack development.
         </p>
 
-        <!-- SUBMISSIONS -->
-        <div class="submissions">
-
-            <!-- WEEK 01 -->
-            <a href="week1" class="card">
-                <div class="number">01 / FIRST ACTIVITY</div>
-                <h3>Week 01</h3>
-                <p>
-                    Explore my first web programming activity
-                    and HTML exercises.
-                </p>
-                <span class="arrow">↗</span>
-            </a>
-
-            <!-- WEEK 02 -->
-            <a href="week2" class="card">
-                <div class="number">02 / SECOND ACTIVITY</div>
-                <h3>Week 02</h3>
-                <p>
-                    Discover my next activities and web
-                    development progress.
-                </p>
-                <span class="arrow">↗</span>
-            </a>
-
-            <!-- WEEK 03 -->
-            <a href="week3" class="card">
-                <div class="number">03 / THIRD ACTIVITY</div>
-                <h3>Week 03</h3>
-                <p>
-                    View my latest web programming activities
-                    and responsive web design exercises.
-                </p>
-                <span class="arrow">↗</span>
-            </a>
-            <!-- WEEK 04 -->
-            <a href="week4" class="card">
-                <div class="number">04 / FOURTH ACTIVITY</div>
-                <h3>Week 04</h3>
-                <p>
-                    Explore HTTP requests, status codes, JavaScript ES6,
-                    DOM manipulation, and interactive notice filtering.
-                </p>
-                <span class="arrow">↗</span>
-            </a>
-
-        </div>
-
+        <ul class="week-list">
+            <li>
+                <a class="week-card" href="week1/index.html">
+                    <span class="week-number">01 / FIRST ACTIVITY</span>
+                    <h2>Week 1</h2>
+                    <p>HTML fundamentals, semantic elements, tables, links, and forms.</p>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+            </li>
+            <li>
+                <a class="week-card" href="week2/index.html">
+                    <span class="week-number">02 / SECOND ACTIVITY</span>
+                    <h2>Week 2</h2>
+                    <p>CSS fundamentals, variables, the box model, and typography.</p>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+            </li>
+            <li>
+                <a class="week-card" href="week3/index.html">
+                    <span class="week-number">03 / THIRD ACTIVITY</span>
+                    <h2>Week 3</h2>
+                    <p>Flexbox, Grid, responsive design, and mobile-first layouts.</p>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+            </li>
+            <li>
+                <a class="week-card" href="week4/index.html">
+                    <span class="week-number">04 / FOURTH ACTIVITY</span>
+                    <h2>Week 4</h2>
+                    <p>HTTP inspection, ES6 JavaScript, DOM events, and interactions.</p>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+            </li>
+            <li>
+                <a class="week-card" href="week5/index.html">
+                    <span class="week-number">05 / FIFTH ACTIVITY</span>
+                    <h2>Week 5</h2>
+                    <p>Public API fetching, loading states, Node.js, npm, and Git.</p>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+            </li>
+        </ul>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         © 2026 Web Programming | Student Portfolio
     </footer>
-
 </body>
 </html>

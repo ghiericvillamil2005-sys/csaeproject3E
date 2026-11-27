@@ -2,134 +2,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Campus Notices</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Santo Tomas National High School Campus Notices Board">
+    <title>STNHS Campus Notices</title>
 </head>
 <body>
-  <header>
-    <h1>Santo Tomas National High School</h1>
 
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="#notices">Notices</a></li>
-        <li><a href="#deadlines">Deadlines</a></li>
-        <li><a href="#submit">Post a notice</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- HEADER AND NAVIGATION -->
+    <header>
+        <img
+            src="logo.jpg"
+            alt="Santo Tomas National High School logo"
+            width="120"
+            height="120"
+        >
+        <h1>Santo Tomas National High School</h1>
+        <p>Campus Notices Board</p>
 
-  <main>
-    <section id="notices">
-      <h2>Latest Campus Notices</h2>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PROGRAM</a></li>
+                <li><a href="#">COMMUNITY</a></li>
+                <li><a href="#">ANNOUNCEMENT</a></li>
+                <li><a href="#">ENROLLMENT</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li><a href="#">LOG IN</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <article class="notice">
-        <h2>Library hours extended</h2>
-        <p class="meta">
-          <time datetime="2026-10-12">12 October 2026</time>
-          · <span class="tag">Academic</span>
-        </p>
-        <p>The library stays open until 9 PM during midterm week.</p>
-      </article>
+    <!-- MAIN CONTENT -->
+    <main>
 
-      <article class="notice">
-        <h2>Campus Clean-Up Drive</h2>
-        <p class="meta">
-          <time datetime="2026-11-28">28 November 2026</time>
-          · <span class="tag">Event</span>
-        </p>
-        <p>All students are invited to participate in the campus clean-up drive. Let us work together to keep our school clean.</p>
-      </article>
+        <!-- LATEST NOTICES -->
+        <section id="notices">
+            <h2>Latest Campus Notices</h2>
 
-      <article class="notice">
-        <h2>Student Organization Registration</h2>
-        <p class="meta">
-          <time datetime="2026-12-05">5 December 2026</time>
-          · <span class="tag">General</span>
-        </p>
-        <p>Students who want to join an organization may register at the student affairs office.</p>
-      </article>
-    </section>
+            <article class="notice">
+                <h3>Library Hours Extended</h3>
 
-    <section id="categories">
-      <h2>Notice Categories</h2>
-      <ul>
-        <li>Academic</li>
-        <li>Events</li>
-        <li>General Announcements</li>
-      </ul>
-    </section>
+                <p>
+                    <time datetime="2026-10-12">12 October 2026</time>
+                    | <span>Academic</span>
+                </p>
 
-    <section id="deadlines">
-      <h2>Upcoming Deadlines</h2>
+                <p>
+                    The library stays open until 9 PM during midterm week.
+                    Students are encouraged to use the extended library hours
+                    for studying and completing their academic requirements.
+                </p>
 
-      <table>
-        <caption>Upcoming Campus Deadlines</caption>
-        <thead>
-          <tr>
-            <th scope="col">Activity</th>
-            <th scope="col">Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Enrolment ends</td>
-            <td>20 January</td>
-          </tr>
-          <tr>
-            <td>Programming contest registration</td>
-            <td>25 January</td>
-          </tr>
-          <tr>
-            <td>Project submission</td>
-            <td>30 January</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+                <p>
+                    <a href="#deadlines">View upcoming academic deadlines</a>
+                </p>
+            </article>
 
-    <section id="submit">
-      <h2>Post a Notice</h2>
+            <article class="notice">
+                <h3>Campus Clean-Up Drive</h3>
 
-      <form action="#" method="post">
-        <p>
-          <label for="title">Title</label><br>
-          <input type="text" id="title" name="title"
-                 required maxlength="100">
-        </p>
+                <p>
+                    <time datetime="2026-11-28">28 November 2026</time>
+                    | <span>Event</span>
+                </p>
 
-        <p>
-          <label for="category">Category</label><br>
-          <select id="category" name="category">
-            <option value="academic">Academic</option>
-            <option value="event">Event</option>
-            <option value="general">General</option>
-          </select>
-        </p>
+                <p>
+                    All students are invited to participate in the campus
+                    clean-up drive. Let us work together to keep our school clean.
+                </p>
+            </article>
 
-        <p>
-          <label for="date">Date</label><br>
-          <input type="date" id="date" name="date">
-        </p>
+            <article class="notice">
+                <h3>Student Organization Registration</h3>
 
-        <p>
-          <label for="message">Message</label><br>
-          <textarea id="message" name="message"
-                    rows="4" required></textarea>
-        </p>
+                <p>
+                    <time datetime="2026-12-05">5 December 2026</time>
+                    | <span>General</span>
+                </p>
 
-        <p>
-          <label for="email">Your email</label><br>
-          <input type="email" id="email" name="email" required>
-        </p>
+                <p>
+                    Students who want to join an organization may register
+                    at the Student Affairs Office.
+                </p>
+            </article>
+        </section>
 
-        <button type="submit">Post Notice</button>
-      </form>
-    </section>
-  </main>
+        <!-- NOTICE CATEGORIES -->
+        <section id="categories">
+            <h2>Notice Categories</h2>
 
-  <footer>
-    <p>Senior High school(STNHS)</p>
-  </footer>
+            <ul>
+                <li>Academic Announcements</li>
+                <li>School Events</li>
+                <li>General Announcements</li>
+            </ul>
+        </section>
+
+        <!-- UPCOMING DEADLINES -->
+        <section id="deadlines">
+            <h2>Upcoming Deadlines</h2>
+
+            <table>
+                <caption>Upcoming Campus Deadlines</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Activity</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Enrolment Ends</td>
+                        <td>20 January 2027</td>
+                    </tr>
+
+                    <tr>
+                        <td>Programming Contest Registration</td>
+                        <td>25 January 2027</td>
+                    </tr>
+
+                    <tr>
+                        <td>Project Submission</td>
+                        <td>30 January 2027</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- POST A NOTICE FORM -->
+        <section id="submit">
+            <h2>Post a Notice</h2>
+
+            <p>
+                Complete the form below to submit a campus announcement.
+            </p>
+
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Notice Information</legend>
+
+                    <p>
+                        <label for="title">Notice Title:</label><br>
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            maxlength="100"
+                            required
+                        >
+                    </p>
+
+                    <p>
+                        <label for="category">Notice Category:</label><br>
+
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected>
+                                Select a category
+                            </option>
+                            <option value="academic">Academic</option>
+                            <option value="event">Event</option>
+                            <option value="general">General</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="date">Notice Date:</label><br>
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required
+                        >
+                    </p>
+
+                    <p>
+                        <label for="message">Notice Message:</label><br>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            maxlength="1000"
+                            required
+                        ></textarea>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Submitter Information</legend>
+
+                    <p>
+                        <label for="email">Your Email Address:</label><br>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit Notice</button>
+                    <button type="reset">Clear Form</button>
+                </p>
+
+            </form>
+        </section>
+
+        <!-- LEARNING RESOURCES -->
+        <section id="resources">
+            <h2>HTML Learning Resources</h2>
+
+            <ul>
+                <li>
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Learn_web_development"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        MDN Web Development Guides
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://validator.w3.org/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        W3C HTML Markup Validation Service
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Santo Tomas National High School (STNHS)</p>
+        <p>Campus Notices Board | CSAE 104 Web Programming</p>
+    </footer>
+
 </body>
 </html>

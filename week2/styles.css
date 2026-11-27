@@ -1,6 +1,6 @@
 
 /* =====================================
-   STEP 1: COLOR VARIABLES
+   STEP 1: CSS COLOR VARIABLES
 ===================================== */
 
 :root {
@@ -12,6 +12,8 @@
     --text: #1f2933;
     --border: #d9e2ec;
     --radius: 8px;
+    --muted-button: #64748b;
+    --muted-button-hover: #475569;
 }
 
 /* =====================================
@@ -27,7 +29,7 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     margin: 0;
-    background: var(--page);
+    background-color: var(--page);
     color: var(--text);
 }
 
@@ -36,7 +38,7 @@ body {
 ===================================== */
 
 header {
-    background: var(--brand);
+    background-color: var(--brand);
     color: var(--surface);
     padding: 16px 24px;
 }
@@ -50,16 +52,20 @@ header {
     height: 55px;
     object-fit: contain;
     border-radius: 50%;
-    background: var(--surface);
+    background-color: var(--surface);
     padding: 3px;
     vertical-align: middle;
 }
 
-.header h2 {
+.header h1 {
     display: inline-block;
     margin-left: 12px;
     font-size: 1.5rem;
     vertical-align: middle;
+}
+
+.header p {
+    margin-bottom: 0;
 }
 
 /* =====================================
@@ -67,7 +73,7 @@ header {
 ===================================== */
 
 nav {
-    background: var(--brand-soft);
+    background-color: var(--brand-soft);
     padding: 16px 24px;
 }
 
@@ -90,7 +96,13 @@ nav a {
 }
 
 nav a:hover {
+    color: var(--brand-dark);
     text-decoration: underline;
+}
+
+nav a:focus {
+    outline: 3px solid var(--brand-dark);
+    outline-offset: 4px;
 }
 
 /* =====================================
@@ -98,20 +110,20 @@ nav a:hover {
 ===================================== */
 
 main {
-    max-width: 720px;
+    max-width: 1000px;
     margin: 24px auto;
     padding: 0 16px;
 }
 
 .container {
-    background: var(--surface);
+    background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 16px;
+    padding: 20px;
 }
 
 /* =====================================
-   STEP 6: CAMPUS NOTICE
+   STEP 6: CONTENT SECTIONS
 ===================================== */
 
 .campus-notice {
@@ -122,6 +134,16 @@ main {
 .content h2 {
     color: var(--brand);
     margin-bottom: 16px;
+}
+
+.content {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-top: 24px;
+}
+
+.content h3 {
+    color: var(--brand);
 }
 
 .description {
@@ -141,7 +163,7 @@ main {
     display: inline-block;
     vertical-align: top;
     width: 31%;
-    background: var(--surface);
+    background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 12px;
@@ -150,7 +172,7 @@ main {
 
 .notice img {
     width: 100%;
-    height: 120px;
+    height: 160px;
     object-fit: cover;
     border-radius: 4px;
     display: block;
@@ -161,13 +183,27 @@ main {
     margin: 8px 0;
 }
 
+.notice:hover {
+    border-color: var(--brand);
+}
+
+/* Announcement cards */
+.announcement {
+    width: 100%;
+    margin-right: 0;
+}
+
+.announcement h3 {
+    margin-top: 0;
+}
+
 /* =====================================
-   STEP 8: NOTICE TAG
+   STEP 8: NOTICE TAGS
 ===================================== */
 
 .tag {
     display: inline-block;
-    background: var(--brand-soft);
+    background-color: var(--brand-soft);
     color: var(--brand);
     border-radius: 4px;
     padding: 2px 8px;
@@ -175,13 +211,28 @@ main {
 }
 
 /* =====================================
-   STEP 9: CONTENT FORM
+   STEP 9: LISTS AND LINKS
 ===================================== */
 
-.content {
-    border-top: 1px solid var(--border);
-    padding-top: 20px;
+.program-list {
+    padding-left: 24px;
 }
+
+.program-list li {
+    margin-bottom: 8px;
+}
+
+.content a {
+    color: var(--brand-dark);
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   STEP 10: CONTACT FORM
+===================================== */
 
 .content form {
     margin-top: 16px;
@@ -198,13 +249,13 @@ select,
 textarea {
     display: block;
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 16px;
     border: 1px solid var(--border);
     border-radius: 4px;
     font: inherit;
     color: var(--text);
-    background: var(--surface);
+    background-color: var(--surface);
 }
 
 textarea {
@@ -212,8 +263,7 @@ textarea {
     resize: vertical;
 }
 
-/* Visible keyboard focus */
-
+/* Keyboard focus */
 input:focus,
 select:focus,
 textarea:focus {
@@ -222,11 +272,11 @@ textarea:focus {
 }
 
 /* =====================================
-   STEP 10: BUTTON
+   STEP 11: BUTTONS
 ===================================== */
 
 button {
-    background: var(--brand);
+    background-color: var(--brand);
     color: var(--surface);
     border: 0;
     border-radius: var(--radius);
@@ -236,41 +286,60 @@ button {
 }
 
 button:hover {
-    background: var(--brand-dark);
+    background-color: var(--brand-dark);
+}
+
+button:focus {
+    outline: 3px solid var(--brand-dark);
+    outline-offset: 3px;
+}
+
+.reset-button {
+    background-color: var(--muted-button);
+}
+
+.reset-button:hover {
+    background-color: var(--muted-button-hover);
 }
 
 /* =====================================
-   STEP 11: TABLE STYLING
+   STEP 12: TABLE
 ===================================== */
 
 table {
     border-collapse: collapse;
     width: 100%;
-    background: var(--surface);
+    background-color: var(--surface);
     margin-bottom: 16px;
+}
+
+caption {
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
 }
 
 th,
 td {
     border: 1px solid var(--border);
-    padding: 8px;
+    padding: 10px;
     text-align: left;
 }
 
 th {
-    background: var(--brand-soft);
+    background-color: var(--brand-soft);
     color: var(--brand);
 }
 
 /* =====================================
-   STEP 12: FOOTER
+   STEP 13: FOOTER
 ===================================== */
 
 footer {
-    background: var(--brand);
+    background-color: var(--brand);
     color: var(--surface);
     text-align: center;
-    padding: 16px;
+    padding: 20px;
 }
 
 .footer h2 {
@@ -283,7 +352,7 @@ footer {
 }
 
 /* =====================================
-   STEP 13: MOBILE ADJUSTMENT
+   STEP 14: MOBILE ADJUSTMENT
 ===================================== */
 
 @media (max-width: 600px) {
@@ -292,7 +361,7 @@ footer {
         padding: 16px;
     }
 
-    .header h2 {
+    .header h1 {
         font-size: 1.1rem;
     }
 
@@ -323,6 +392,29 @@ footer {
     }
 
     .notice img {
-        height: 160px;
+        height: 180px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
+
+/* =====================================
+   OPTIONAL: SYSTEM DARK THEME
+===================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand: #93b4d8;
+        --brand-dark: #c7dcf4;
+        --brand-soft: #26384c;
+        --surface: #1f2933;
+        --page: #111827;
+        --text: #e5edf5;
+        --border: #435268;
+        --muted-button: #526272;
+        --muted-button-hover: #66798c;
     }
 }

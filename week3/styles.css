@@ -10,13 +10,24 @@
     font-family: Arial, sans-serif;
 }
 
+:root {
+    --brand: #24364b;
+    --brand-light: #405b78;
+    --surface: #ffffff;
+    --page: #f4f4f4;
+    --text: #333333;
+    --muted: #666666;
+    --border: #dddddd;
+    --radius: 8px;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--page);
+    color: var(--text);
     min-height: 100vh;
 
     display: grid;
@@ -46,8 +57,8 @@ img {
 .header {
     grid-area: header;
     width: 100%;
-    background-color: #24364b;
-    color: white;
+    background-color: var(--brand);
+    color: var(--surface);
     padding: 15px 20px;
 
     display: flex;
@@ -150,7 +161,7 @@ img {
 ========================================= */
 
 .campus-notice {
-    background-color: white;
+    background-color: var(--surface);
     padding: 20px;
     border-radius: 8px;
 
@@ -332,7 +343,7 @@ img {
 
 .sidebar {
     grid-area: aside;
-    background-color: white;
+    background-color: var(--surface);
     padding: 20px;
     margin: 0 16px;
     min-width: 0;
@@ -382,8 +393,8 @@ img {
 
 .footer {
     grid-area: footer;
-    background-color: #24364b;
-    color: white;
+    background-color: var(--brand);
+    color: var(--surface);
 
     text-align: center;
     padding: 25px;
